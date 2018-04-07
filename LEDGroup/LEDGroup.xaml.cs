@@ -22,8 +22,8 @@ namespace LEDGroup
             InitializeComponent();
             TextLabel = "hour";
 
-            Value = 0;
             LEDSize = 2;
+            Value = 0;
             
         }
 
@@ -83,8 +83,16 @@ namespace LEDGroup
             set
             {
                 _value = value;
-                led1.LEDValue = Convert.ToInt32(_value.ToString().PadLeft(2,'0')[0].ToString());
-                led2.LEDValue = _value % 10;
+                led1.LEDValue = Convert.ToInt32(_value.ToString().PadLeft(_size, '0')[0].ToString());
+                led2.LEDValue = Convert.ToInt32(_value.ToString().PadLeft(_size, '0')[1].ToString());
+                if (_size >= 3)
+                {
+                    led3.LEDValue = Convert.ToInt32(_value.ToString().PadLeft(_size, '0')[2].ToString());
+                }
+                if (_size == 4)
+                {
+                    led4.LEDValue = Convert.ToInt32(_value.ToString().PadLeft(_size, '0')[3].ToString());
+                }
             }
         }
 

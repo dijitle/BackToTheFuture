@@ -24,9 +24,9 @@
         </Grid.RowDefinitions>
 
         <pod:Pod x:Name="timeDestination" Grid.Row="0"></pod:Pod>
+        <pod:Pod x:Name="timePresent" Grid.Row="1"></pod:Pod>
+        <pod:Pod x:Name="timeDeparted" Grid.Row="2"></pod:Pod>
 
-        <Button Margin="0,82,0,0" Click="Button_Click" HorizontalAlignment="Right" Width="70" Grid.Row="2">
-
-        </Button>
+        
     </Grid>
 </Window>

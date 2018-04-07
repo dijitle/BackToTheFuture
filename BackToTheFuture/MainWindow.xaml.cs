@@ -24,8 +24,17 @@ namespace BackToTheFuture
         public MainWindow()
         {
             InitializeComponent();
-            timeDestination.Value = DateTime.Now;
+            timeDestination.Value = new DateTime(2015, 10, 21, 4, 29, 00);
             timeDestination.LEDColor = "Orange";
+            timeDestination.TextLabel = "Destination Time";
+
+            timePresent.Value = DateTime.Now;
+            timePresent.LEDColor = "Green";
+            timePresent.TextLabel = "Present Time";
+
+            timeDeparted.Value = DateTime.Now;
+            timeDeparted.LEDColor = "Yellow";
+            timeDeparted.TextLabel = "Last Time Departed";
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
