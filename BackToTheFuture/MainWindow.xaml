@@ -1,0 +1,32 @@
+﻿<Window x:Class="BackToTheFuture.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:bttf="clr-namespace:LED;assembly=LED"
+        xmlns:local="clr-namespace:BackToTheFuture"
+        xmlns:ledgroup="clr-namespace:LEDGroup;assembly=LEDGroup"
+        xmlns:pod="clr-namespace:Pod;assembly=Pod"
+        mc:Ignorable="d"
+        Title="Back To The Future" Height="360" Width="600">
+
+    <Grid>
+        <Grid.Background>
+            <LinearGradientBrush EndPoint="0.5,1" MappingMode="RelativeToBoundingBox" StartPoint="0.5,0">
+                <GradientStop Color="#FF616161" Offset="1"/>
+                <GradientStop Color="#FF959595"/>
+            </LinearGradientBrush>
+        </Grid.Background>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+        </Grid.RowDefinitions>
+
+        <pod:Pod x:Name="timeDestination" Grid.Row="0"></pod:Pod>
+
+        <Button Margin="0,82,0,0" Click="Button_Click" HorizontalAlignment="Right" Width="70" Grid.Row="2">
+
+        </Button>
+    </Grid>
+</Window>

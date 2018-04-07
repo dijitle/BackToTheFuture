@@ -1,0 +1,24 @@
+﻿<UserControl x:Class="LED.LED"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:LED"
+             DataContext="{Binding RelativeSource={RelativeSource Self}}"
+             mc:Ignorable="d" 
+             d:DesignHeight="100" d:DesignWidth="50">
+    <Grid Background="Black" SizeChanged="Grid_SizeChanged">
+        <Polygon Fill="{Binding LEDColor}" Stroke="Black" StrokeThickness="{Binding GapThickness}" Opacity="{Binding LEDTop}" Points="{Binding LEDPointsTop}"/>
+
+        <Polygon Fill="{Binding LEDColor}" Stroke="Black" StrokeThickness="{Binding GapThickness}" Opacity="{Binding LEDTopLeft}" Points="{Binding LEDPointsTopLeft}"/>
+        <Polygon Fill="{Binding LEDColor}" Stroke="Black" StrokeThickness="{Binding GapThickness}" Opacity="{Binding LEDTopRight}" Points="{Binding LEDPointsTopRight}"/>
+
+        <Polygon Fill="{Binding LEDColor}" Stroke="Black" StrokeThickness="{Binding GapThickness}" Opacity="{Binding LEDMiddle}" Points="{Binding LEDPointsMiddle}"/>
+
+        <Polygon Fill="{Binding LEDColor}" Stroke="Black" StrokeThickness="{Binding GapThickness}" Opacity="{Binding LEDBottomLeft}" Points="{Binding LEDPointsBottomLeft}"/>
+        <Polygon Fill="{Binding LEDColor}" Stroke="Black" StrokeThickness="{Binding GapThickness}" Opacity="{Binding LEDBottomRight}" Points="{Binding LEDPointsBottomRight}"/>
+
+        <Polygon Fill="{Binding LEDColor}" Stroke="Black" StrokeThickness="{Binding GapThickness}" Opacity="{Binding LEDBottom}" Points="{Binding LEDPointsBottom}"/>
+
+    </Grid>
+</UserControl>
