@@ -25,15 +25,15 @@ namespace BackToTheFuture
         {
             InitializeComponent();
             timeDestination.Value = new DateTime(2015, 10, 21, 4, 29, 00);
-            timeDestination.LEDColor = "Orange";
+            timeDestination.LEDColor = Brushes.Orange;
             timeDestination.TextLabel = "Destination Time";
 
             timePresent.Value = DateTime.Now;
-            timePresent.LEDColor = "Green";
+            timePresent.LEDColor = Brushes.Green;
             timePresent.TextLabel = "Present Time";
 
             timeDeparted.Value = DateTime.Now;
-            timeDeparted.LEDColor = "Yellow";
+            timeDeparted.LEDColor = Brushes.Yellow;
             timeDeparted.TextLabel = "Last Time Departed";
         }
 

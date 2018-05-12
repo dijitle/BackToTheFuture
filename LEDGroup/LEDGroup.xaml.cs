@@ -12,7 +12,7 @@ namespace LEDGroup
     /// </summary>
     public partial class LEDGroup : UserControl, INotifyPropertyChanged
     {
-        private string _ledColor;
+        private SolidColorBrush _ledColor;
         private int _size;
         private string _textLabel = string.Empty;
         private int _value;
@@ -57,7 +57,7 @@ namespace LEDGroup
         public string Show3 { get { return (_size >= 3) ? "1*" : "0*"; } }
         public string Show4 { get { return (_size == 4) ? "1*" : "0*"; } }
 
-        public string LEDColor
+        public SolidColorBrush LEDColor
         {
             get
             {

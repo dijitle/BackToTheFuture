@@ -12,7 +12,7 @@ namespace LED
     /// </summary>
     public partial class LED : UserControl, INotifyPropertyChanged
     {
-        private string _ledColor;
+        private SolidColorBrush _ledColor;
         private int _ledValue;
         private double _gapThickness;
 
@@ -24,7 +24,7 @@ namespace LED
             InitializeComponent();
         }
 
-        public string LEDColor
+        public SolidColorBrush LEDColor
         {
             get
             {

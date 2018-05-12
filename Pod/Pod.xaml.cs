@@ -13,7 +13,7 @@ namespace Pod
     /// </summary>
     public partial class Pod : UserControl, INotifyPropertyChanged
     {
-        private string _ledColor;
+        private SolidColorBrush _ledColor;
         private string _textLabel = string.Empty;
         private DateTime _value;
 
@@ -46,7 +46,7 @@ namespace Pod
             }
         }
 
-        public string LEDColor
+        public SolidColorBrush LEDColor
         {
             get
             {
