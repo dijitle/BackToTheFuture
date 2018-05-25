@@ -7,11 +7,11 @@
              xmlns:led="clr-namespace:LED;assembly=LED"             
              DataContext="{Binding RelativeSource={RelativeSource Self}}"
              mc:Ignorable="d" 
-             d:DesignHeight="120" d:DesignWidth="100">
+             d:DesignHeight="100" d:DesignWidth="100">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="1*"/>
-            <RowDefinition Height="5*"/>
+            <RowDefinition Height="3*"/>
         </Grid.RowDefinitions>
 
         <Grid Grid.Row="0" HorizontalAlignment="Center">

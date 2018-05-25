@@ -99,7 +99,7 @@ namespace LED
         private void Grid_SizeChanged(object sender, SizeChangedEventArgs e)
         {
             double h = ActualHeight; 
-            double w = h / 2;
+            double w = h / 1.6;
             double m = w * .1; //margin
             double t = h * .1; //thickness
 

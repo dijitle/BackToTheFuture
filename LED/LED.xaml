@@ -6,7 +6,7 @@
              xmlns:local="clr-namespace:LED"
              DataContext="{Binding RelativeSource={RelativeSource Self}}"
              mc:Ignorable="d" 
-             d:DesignHeight="100" d:DesignWidth="50">
+             d:DesignHeight="80" d:DesignWidth="50">
     <Grid Background="Black" SizeChanged="Grid_SizeChanged">
         <Polygon Fill="{Binding LEDColor}" Stroke="Black" StrokeThickness="{Binding GapThickness}" Opacity="{Binding LEDTop}" Points="{Binding LEDPointsTop}"/>
 
