@@ -6,8 +6,16 @@
              xmlns:local="clr-namespace:LED"
              DataContext="{Binding RelativeSource={RelativeSource Self}}"
              mc:Ignorable="d" 
-             d:DesignHeight="90" d:DesignWidth="50">
-    <Grid Background="Black"> 
+             d:DesignHeight="100" d:DesignWidth="60">
+    <Grid Background="Black" Margin="5" HorizontalAlignment="Center" VerticalAlignment="Center" RenderTransformOrigin="0.5,0.5">
+        <Grid.RenderTransform>
+            <TransformGroup>
+                <ScaleTransform/>
+                <SkewTransform AngleX="-5"/>
+                <RotateTransform/>
+                <TranslateTransform/>
+            </TransformGroup>
+        </Grid.RenderTransform>
         <Polygon Fill="{Binding LEDColor}" Stroke="Black" StrokeThickness="1" Opacity="{Binding LEDTop}" Points="5,5 10,0 40,0 45,5 40,10 10,10"/>
         <Polygon Fill="{Binding LEDColor}" Stroke="Black" StrokeThickness="1" Opacity="{Binding LEDTopLeft}" Points="5,5 10,10 10,40 5,45 0,40 0,10"/>
         <Polygon Fill="{Binding LEDColor}" Stroke="Black" StrokeThickness="1" Opacity="{Binding LEDTopRight}" Points="45,5 50,10 50,40 45,45 40,40 40,10"/>

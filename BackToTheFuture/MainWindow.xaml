@@ -8,7 +8,7 @@
         xmlns:ledgroup="clr-namespace:LEDGroup;assembly=LEDGroup"
         xmlns:pod="clr-namespace:Pod;assembly=Pod"
         mc:Ignorable="d"
-        Title="Back To The Future" Height="600" Width="750">
+        Title="Back To The Future" Height="600" Width="920">
 
     <Grid>
         <Grid.Background>
@@ -26,7 +26,6 @@
         <pod:Pod x:Name="timeDestination" Grid.Row="0" HorizontalAlignment="Center" VerticalAlignment="Center"></pod:Pod>
         <pod:Pod x:Name="timePresent" Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center"></pod:Pod>
         <pod:Pod x:Name="timeDeparted" Grid.Row="2" HorizontalAlignment="Center" VerticalAlignment="Center"></pod:Pod>
-        <Button Margin="31,142,647,17" Content="Cycle" Click="Button_Click"></Button>
-        
+
     </Grid>
 </Window>

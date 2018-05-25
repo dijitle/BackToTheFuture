@@ -69,13 +69,13 @@ namespace LED
         public double LEDBottomRight { get { return "abdghjmnoqsuw013456789".Contains(_ledValue) ? LED_ON : LED_DIM; } }
         public double LEDBottom { get { return "bcdegijloqsuw0235689".Contains(_ledValue) ? LED_ON : LED_DIM; } }
 
-        public double LEDNorth { get { return "bdimt".Contains(_ledValue) ? LED_ON : "0123456789".Contains(_ledValue) ? LED_OFF : LED_DIM; } }
-        public double LEDNorthWest { get { return "n".Contains(_ledValue) ? LED_ON : "0123456789".Contains(_ledValue) ? LED_OFF : LED_DIM; } }
-        public double LEDNorthEast { get { return "k".Contains(_ledValue) ? LED_ON : "0123456789".Contains(_ledValue) ? LED_OFF : LED_DIM; } }
+        public double LEDNorth { get { return "bdimt".Contains(_ledValue) ? LED_ON : "0123456789".Contains(_ledValue) ? LED_OFF : LED_DIM / 2 ; } }
+        public double LEDNorthWest { get { return "n".Contains(_ledValue) ? LED_ON : "0123456789".Contains(_ledValue) ? LED_OFF : LED_DIM / 2 ; } }
+        public double LEDNorthEast { get { return "k".Contains(_ledValue) ? LED_ON : "0123456789".Contains(_ledValue) ? LED_OFF : LED_DIM / 2; } }
 
-        public double LEDSouth { get { return "bditwy".Contains(_ledValue) ? LED_ON : "0123456789".Contains(_ledValue) ? LED_OFF : LED_DIM; } }
-        public double LEDSouthWest { get { return "kqrx".Contains(_ledValue) ? LED_ON : "0123456789".Contains(_ledValue) ? LED_OFF : LED_DIM; } }
-        public double LEDSouthEast { get { return "vxz".Contains(_ledValue) ? LED_ON : "0123456789".Contains(_ledValue) ? LED_OFF : LED_DIM; } }
+        public double LEDSouth { get { return "bditwy".Contains(_ledValue) ? LED_ON : "0123456789".Contains(_ledValue) ? LED_OFF : LED_DIM / 2 ; } }
+        public double LEDSouthWest { get { return "kqrx".Contains(_ledValue) ? LED_ON : "0123456789".Contains(_ledValue) ? LED_OFF : LED_DIM / 2; } }
+        public double LEDSouthEast { get { return "vxz".Contains(_ledValue) ? LED_ON : "0123456789".Contains(_ledValue) ? LED_OFF : LED_DIM / 2; } }
 
         public event PropertyChangedEventHandler PropertyChanged;
         protected void OnPropertyChanged([CallerMemberName] string propertyName = null)
