@@ -13,7 +13,7 @@ namespace LED
     public partial class LED : UserControl, INotifyPropertyChanged
     {
         private SolidColorBrush _ledColor;
-        private string _ledValue;
+        private char _ledValue;
 
         private const double LED_ON = 1.0;
         private const double LED_DIM = 0.2;
@@ -37,7 +37,7 @@ namespace LED
             }
         } 
 
-        public string LEDValue
+        public char LEDValue
         {
             set
             {
@@ -61,14 +61,14 @@ namespace LED
         }
 
 
-        public double LEDTop { get { return ( (new[] { "0", "2", "3", "5", "6", "7", "8", "9" }).Contains(_ledValue)) ? LED_ON : LED_DIM; } }
-        public double LEDTopLeft { get { return ((new[] { "0", "4", "5", "6", "8", "9" }).Contains(_ledValue)) ? LED_ON : LED_DIM; } }
-        public double LEDTopRight { get { return ((new[] { "0", "1", "2", "3", "4", "7", "8", "9" }).Contains(_ledValue)) ? LED_ON : LED_DIM; } }
-        public double LEDWest { get { return ((new[] { "2", "3", "4", "5", "6", "8", "9" }).Contains(_ledValue)) ? LED_ON : LED_DIM; } }
-        public double LEDEast{ get { return ((new[] { "2", "3", "4", "5", "6", "8", "9" }).Contains(_ledValue)) ? LED_ON : LED_DIM; } }
-        public double LEDBottomLeft { get { return ((new[] { "0", "2", "6", "8" }).Contains(_ledValue)) ? LED_ON : LED_DIM; } }
-        public double LEDBottomRight { get { return ((new[] { "0", "1", "3", "4", "5", "6", "7", "8", "9" }).Contains(_ledValue)) ? LED_ON : LED_DIM; } }
-        public double LEDBottom { get { return ((new[] { "0", "2", "3", "5", "6", "8", "9" }).Contains(_ledValue)) ? LED_ON : LED_DIM; } }
+        public double LEDTop { get { return "02356789".Contains(_ledValue) ? LED_ON : LED_DIM; } }
+        public double LEDTopLeft { get { return "045689".Contains(_ledValue) ? LED_ON : LED_DIM; } }
+        public double LEDTopRight { get { return "01234789".Contains(_ledValue) ? LED_ON : LED_DIM; } }
+        public double LEDWest { get { return "2345689".Contains(_ledValue) ? LED_ON : LED_DIM; } }
+        public double LEDEast{ get { return "2345689".Contains(_ledValue) ? LED_ON : LED_DIM; } }
+        public double LEDBottomLeft { get { return "0268".Contains(_ledValue) ? LED_ON : LED_DIM; } }
+        public double LEDBottomRight { get { return "013456789".Contains(_ledValue) ? LED_ON : LED_DIM; } }
+        public double LEDBottom { get { return "0235689".Contains(_ledValue) ? LED_ON : LED_DIM; } }
 
         public double LEDNorth { get { return LED_OFF; } }
         public double LEDNorthWest { get { return LED_OFF; } }
