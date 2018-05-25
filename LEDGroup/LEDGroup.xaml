@@ -7,27 +7,33 @@
              xmlns:led="clr-namespace:LED;assembly=LED"             
              DataContext="{Binding RelativeSource={RelativeSource Self}}"
              mc:Ignorable="d" 
-             d:DesignHeight="100" d:DesignWidth="100">
+             d:DesignHeight="120" d:DesignWidth="125" MinHeight="120" MinWidth="125">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="1*"/>
             <RowDefinition Height="3*"/>
         </Grid.RowDefinitions>
 
-        <Grid Grid.Row="0" HorizontalAlignment="Center">
-            <Viewbox Margin="0,2">
-                <TextBlock Background="Red" Foreground="White" FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="12" Padding="10,0" Text="{Binding TextLabel}"></TextBlock>
-            </Viewbox>
-        </Grid>
-          
-        <Grid Grid.Row="1">
+
+        <TextBlock Background="Red" Foreground="White" FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="12" Padding="10,0" Text="{Binding TextLabel}"></TextBlock>
+
+
+        <Grid Grid.Row="1" Background="Black" RenderTransformOrigin="0.5,0.5">
+            <Grid.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform AngleX="-5"/>
+                    <RotateTransform/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Grid.RenderTransform>
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="1*"/>
                 <ColumnDefinition Width="1*"/>
                 <ColumnDefinition Width="{Binding Show3}"/>
                 <ColumnDefinition Width="{Binding Show4}"/>
             </Grid.ColumnDefinitions>
-                
+
             <led:LED Name="led1" Grid.Column="0"></led:LED>
             <led:LED Name="led2" Grid.Column="1"></led:LED>
             <led:LED Name="led3" Grid.Column="2"></led:LED>

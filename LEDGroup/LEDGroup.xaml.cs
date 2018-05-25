@@ -76,9 +76,13 @@ namespace LEDGroup
 
         public string Value
         {
+            get
+            {
+                return _value;
+            }
             set
             {
-                _value = value;
+                _value = value.ToLower();
                 led1.LEDValue = _value.PadLeft(_size, '0')[0];
                 led2.LEDValue = _value.PadLeft(_size, '0')[1];
                 if (_size >= 3)

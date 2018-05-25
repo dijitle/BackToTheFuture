@@ -8,26 +8,20 @@
              mc:Ignorable="d" 
              d:DesignHeight="90" d:DesignWidth="50">
     <Grid Background="Black"> 
-        <Polygon Fill="red" Stroke="Black" StrokeThickness="1" Opacity="{Binding LEDTop}" Points="5,5 10,0 40,0 45,5 40,10 10,10"/>
-        <Polygon Fill="red" Stroke="Black" StrokeThickness="1" Opacity="{Binding LEDTopLeft}" Points="5,5 10,10 10,40 5,45 0,40 0,10"/>
-        <Polygon Fill="red" Stroke="Black" StrokeThickness="1" Opacity="{Binding LEDTopRight}" Points="45,5 50,10 50,40 45,45 40,40 40,10"/>
-
-        <Polygon Fill="red" Stroke="Black" StrokeThickness="1" Opacity="{Binding LEDWest}" Points="5,45 10,40 25,40 25,50 10,50"/>
-        <Polygon Fill="red" Stroke="Black" StrokeThickness="1" Opacity="{Binding LEDEast}" Points="25,40 40,40 45,45 40,50 25,50"/>
-
-        <Polygon Fill="red" Stroke="Black" StrokeThickness="1" Opacity="{Binding LEDBottomLeft}" Points="5,45 10,50 10,80 5,85 0,80 0,50"/>
-        <Polygon Fill="red" Stroke="Black" StrokeThickness="1" Opacity="{Binding LEDBottomRight}" Points="45,45 50,50 50,80 45,85 40,80 40,50"/>
-        <Polygon Fill="red" Stroke="Black" StrokeThickness="1" Opacity="{Binding LEDBottom}" Points="5,85 10,80 40,80 45,85 40,90 10,90"/>
-
-        <Polygon Fill="red" Stroke="Black" StrokeThickness="1" Opacity="{Binding LEDNorth}" Points="25,5 30,10 30,40 25,45 20,40 20,10"/>
-        <Polygon Fill="red" Stroke="Black" StrokeThickness="1" Opacity="{Binding LEDNorthWest}" Points="10,10 18,10 40,32 40,40 32,40 10,18"/>
-
-        <Polygon Fill="red" Stroke="Black" StrokeThickness="1" Opacity="{Binding LEDNorthEast}" Points="10,40 10,32 32,10 40,10 40,18 18,40"/>
-
-        <Polygon Fill="red" Stroke="Black" StrokeThickness="1" Opacity="{Binding LEDSouth}" Points="25,45 30,50 30,80 25,85 20,80 20,50"/>
-        <Polygon Fill="red" Stroke="Black" StrokeThickness="1" Opacity="{Binding LEDSouthWest}" Points="10,50 18,50 40,72 40,80 32,80 10,58"/>
-
-        <Polygon Fill="red" Stroke="Black" StrokeThickness="1" Opacity="{Binding LEDSouthEast}" Points="10,80 10,72 32,50 40,50 40,58 18,80"/>
+        <Polygon Fill="{Binding LEDColor}" Stroke="Black" StrokeThickness="1" Opacity="{Binding LEDTop}" Points="5,5 10,0 40,0 45,5 40,10 10,10"/>
+        <Polygon Fill="{Binding LEDColor}" Stroke="Black" StrokeThickness="1" Opacity="{Binding LEDTopLeft}" Points="5,5 10,10 10,40 5,45 0,40 0,10"/>
+        <Polygon Fill="{Binding LEDColor}" Stroke="Black" StrokeThickness="1" Opacity="{Binding LEDTopRight}" Points="45,5 50,10 50,40 45,45 40,40 40,10"/>
+        <Polygon Fill="{Binding LEDColor}" Stroke="Black" StrokeThickness="1" Opacity="{Binding LEDWest}" Points="5,45 10,40 25,40 25,50 10,50"/>
+        <Polygon Fill="{Binding LEDColor}" Stroke="Black" StrokeThickness="1" Opacity="{Binding LEDEast}" Points="25,40 40,40 45,45 40,50 25,50"/>
+        <Polygon Fill="{Binding LEDColor}" Stroke="Black" StrokeThickness="1" Opacity="{Binding LEDBottomLeft}" Points="5,45 10,50 10,80 5,85 0,80 0,50"/>
+        <Polygon Fill="{Binding LEDColor}" Stroke="Black" StrokeThickness="1" Opacity="{Binding LEDBottomRight}" Points="45,45 50,50 50,80 45,85 40,80 40,50"/>
+        <Polygon Fill="{Binding LEDColor}" Stroke="Black" StrokeThickness="1" Opacity="{Binding LEDBottom}" Points="5,85 10,80 40,80 45,85 40,90 10,90"/>
+        <Polygon Fill="{Binding LEDColor}" Stroke="Black" StrokeThickness="1" Opacity="{Binding LEDNorth}" Points="25,5 30,10 30,40 25,45 20,40 20,10"/>
+        <Polygon Fill="{Binding LEDColor}" Stroke="Black" StrokeThickness="1" Opacity="{Binding LEDNorthWest}" Points="10,10 18,10 40,32 40,40 32,40 10,18"/>
+        <Polygon Fill="{Binding LEDColor}" Stroke="Black" StrokeThickness="1" Opacity="{Binding LEDNorthEast}" Points="10,40 10,32 32,10 40,10 40,18 18,40"/>
+        <Polygon Fill="{Binding LEDColor}" Stroke="Black" StrokeThickness="1" Opacity="{Binding LEDSouth}" Points="25,45 30,50 30,80 25,85 20,80 20,50"/>
+        <Polygon Fill="{Binding LEDColor}" Stroke="Black" StrokeThickness="1" Opacity="{Binding LEDSouthWest}" Points="10,50 18,50 40,72 40,80 32,80 10,58"/>
+        <Polygon Fill="{Binding LEDColor}" Stroke="Black" StrokeThickness="1" Opacity="{Binding LEDSouthEast}" Points="10,80 10,72 32,50 40,50 40,58 18,80"/>
 
     </Grid>
 </UserControl>

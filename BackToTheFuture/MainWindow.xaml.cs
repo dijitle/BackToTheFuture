@@ -25,14 +25,14 @@ namespace BackToTheFuture
         {
             InitializeComponent();
             timeDestination.Value = new DateTime(2015, 10, 21, 4, 29, 00);
-            timeDestination.LEDColor = Brushes.Orange;
+            timeDestination.LEDColor = Brushes.Red;
             timeDestination.TextLabel = "Destination Time";
 
             timePresent.Value = DateTime.Now;
             timePresent.LEDColor = Brushes.Green;
             timePresent.TextLabel = "Present Time";
 
-            timeDeparted.Value = DateTime.Now;
+            timeDeparted.Value = new DateTime(1955, 11, 12, 6, 38, 00); ;
             timeDeparted.LEDColor = Brushes.Yellow;
             timeDeparted.TextLabel = "Last Time Departed";
         }
@@ -48,10 +48,10 @@ namespace BackToTheFuture
         {
 
 
-            for (int i = 0; i <= 99; i++)
+            for (int i = 1; i <= 12; i++)
             {
                 setValue(i);
-                Thread.Sleep(100);
+                Thread.Sleep(1000);
             }
         }
 
@@ -63,8 +63,9 @@ namespace BackToTheFuture
             }
             else
             {
-                //lg1.Value = i;
+                timeDestination.Value = new DateTime(2015, i, 21, 4, 29, 00);
             }
         }
+        
     }
 }

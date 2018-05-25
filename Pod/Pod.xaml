@@ -7,12 +7,12 @@
              xmlns:ledgroup="clr-namespace:LEDGroup;assembly=LEDGroup"
              DataContext="{Binding RelativeSource={RelativeSource Self}}"
              mc:Ignorable="d" 
-             d:DesignHeight="120" d:DesignWidth="600">
+             d:DesignHeight="168" Width="720" MinHeight="168" MinWidth="720">
     <Grid>
         <Grid.Background>
             <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                 <GradientStop Color="#FF6A6A6A" Offset="0"/>
-                <GradientStop Color="Black" Offset="1"/>
+                <GradientStop Color="#FF7E7E7E" Offset="1"/>
             </LinearGradientBrush>
         </Grid.Background>
         <Grid.RowDefinitions>
@@ -23,33 +23,33 @@
         <Grid Grid.Row="0">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="3*"/>
+                <ColumnDefinition Width="0.5*"/>
                 <ColumnDefinition Width="2*"/>
+                <ColumnDefinition Width="0.5*"/>
                 <ColumnDefinition Width="4*"/>
-                <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="0.5*"/>
                 <ColumnDefinition Width="2*"/>
-                <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="0.5*"/>
                 <ColumnDefinition Width="2*"/>
             </Grid.ColumnDefinitions>
            
                                          
-            <ledgroup:LEDGroup Name="podMonth" Grid.Column="0" HorizontalAlignment="Center"></ledgroup:LEDGroup>
+            <ledgroup:LEDGroup Name="podMonth" Grid.Column="0" HorizontalAlignment="Center" VerticalAlignment="Center"></ledgroup:LEDGroup>
 
-            <ledgroup:LEDGroup Name="podDay" Grid.Column="1" HorizontalAlignment="Center"></ledgroup:LEDGroup>
+            <ledgroup:LEDGroup Name="podDay" Grid.Column="2" HorizontalAlignment="Center" VerticalAlignment="Center"></ledgroup:LEDGroup>
 
-            <ledgroup:LEDGroup Name="podYear" Grid.Column="2" HorizontalAlignment="Center"></ledgroup:LEDGroup>
+            <ledgroup:LEDGroup Name="podYear" Grid.Column="4" HorizontalAlignment="Center" VerticalAlignment="Center"></ledgroup:LEDGroup>
 
-            <ledgroup:LEDGroup Name="podHour" Grid.Column="4" HorizontalAlignment="Center"></ledgroup:LEDGroup>
+            <ledgroup:LEDGroup Name="podHour" Grid.Column="6" HorizontalAlignment="Center" VerticalAlignment="Center"></ledgroup:LEDGroup>
 
-            <ledgroup:LEDGroup Name="podMinute" Grid.Column="6" HorizontalAlignment="Center"></ledgroup:LEDGroup>
+            <ledgroup:LEDGroup Name="podMinute" Grid.Column="8" HorizontalAlignment="Center" VerticalAlignment="Center"></ledgroup:LEDGroup>
             
             
         </Grid>
 
-        <Grid HorizontalAlignment="Center" Grid.Row="1">
-            <Viewbox Margin="0,2">
-                <TextBlock Background="Black" Foreground="White" FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="12" Padding="10,0" Text="{Binding TextLabel}"></TextBlock>
-            </Viewbox>
-        </Grid>
+        
+         <TextBlock Grid.Row="1" Background="Black" Foreground="White" FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="36" Padding="10,0" Text="{Binding TextLabel}"></TextBlock>
+            
 
     </Grid>
 </UserControl>
