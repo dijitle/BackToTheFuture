@@ -73,11 +73,11 @@ namespace Pod
             set
             {
                 _value = value;
-                podMonth.Value = _value.Month;
-                podDay.Value = _value.Day;
-                podYear.Value = _value.Year;
-                podHour.Value = _value.Hour;
-                podMinute.Value = _value.Minute;
+                podMonth.Value = _value.Month.ToString();
+                podDay.Value = _value.Day.ToString();
+                podYear.Value = _value.Year.ToString();
+                podHour.Value = _value.Hour.ToString();
+                podMinute.Value = _value.Minute.ToString();
             }
         }
 

@@ -15,7 +15,7 @@ namespace LEDGroup
         private SolidColorBrush _ledColor;
         private int _size;
         private string _textLabel = string.Empty;
-        private int _value;
+        private string _value;
 
         public LEDGroup()
         {
@@ -23,7 +23,7 @@ namespace LEDGroup
             TextLabel = "hour";
 
             LEDSize = 2;
-            Value = 0;
+            Value = "0000";
             
         }
 
@@ -74,20 +74,20 @@ namespace LEDGroup
             }
         }
 
-        public int Value
+        public string Value
         {
             set
             {
                 _value = value;
-                led1.LEDValue = _value.ToString().PadLeft(_size, '0')[0];
-                led2.LEDValue = _value.ToString().PadLeft(_size, '0')[1];
+                led1.LEDValue = _value.PadLeft(_size, '0')[0];
+                led2.LEDValue = _value.PadLeft(_size, '0')[1];
                 if (_size >= 3)
                 {
-                    led3.LEDValue = _value.ToString().PadLeft(_size, '0')[2];
+                    led3.LEDValue = _value.PadLeft(_size, '0')[2];
                 }
                 if (_size == 4)
                 {
-                    led4.LEDValue = _value.ToString().PadLeft(_size, '0')[3];
+                    led4.LEDValue = _value.PadLeft(_size, '0')[3];
                 }
             }
         }
