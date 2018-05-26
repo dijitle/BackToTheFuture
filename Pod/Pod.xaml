@@ -42,13 +42,24 @@
 
             <ledgroup:LEDGroup Name="podHour" Grid.Column="6" HorizontalAlignment="Center" VerticalAlignment="Center"></ledgroup:LEDGroup>
 
+            <Grid Grid.Column="7">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="1*" />
+                    <RowDefinition Height="1*" />
+                </Grid.RowDefinitions>
+
+                <Ellipse Grid.Row="0" Fill="{Binding LEDColor}" Width="10" Height="10" VerticalAlignment="Bottom" />
+
+                <Ellipse Grid.Row="1" Fill="{Binding LEDColor}" Width="10" Height="10" VerticalAlignment="Center" />
+            </Grid>
+
             <ledgroup:LEDGroup Name="podMinute" Grid.Column="8" HorizontalAlignment="Center" VerticalAlignment="Center"></ledgroup:LEDGroup>
             
             
         </Grid>
 
         
-         <TextBlock Grid.Row="1" Background="Black" Foreground="White" FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="36" Padding="10,0" Text="{Binding TextLabel}"></TextBlock>
+         <TextBlock Grid.Row="1" Background="Black" Foreground="White" FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="36" Padding="10,0" Margin="2" Text="{Binding TextLabel}"></TextBlock>
             
 
     </Grid>

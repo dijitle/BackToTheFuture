@@ -66,6 +66,8 @@ namespace Pod
                 podYear.LEDColor = _ledColor;
                 podHour.LEDColor = _ledColor;
                 podMinute.LEDColor = _ledColor;
+
+                OnPropertyChanged();
             }
         }
 

@@ -15,7 +15,7 @@
         </Grid.RowDefinitions>
 
         
-        <TextBlock Background="Red" Foreground="White" FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="24" Padding="10,0" Text="{Binding TextLabel}"></TextBlock>
+        <TextBlock Background="Red" Foreground="White" FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="24" Padding="10,0" Text="{Binding TextLabel}" Margin="2"></TextBlock>
         
           
         <Grid Grid.Row="1" Background="Black">
