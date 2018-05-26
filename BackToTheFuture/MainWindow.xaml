@@ -26,6 +26,5 @@
         <pod:Pod x:Name="timeDestination" Grid.Row="0" HorizontalAlignment="Center" VerticalAlignment="Center"></pod:Pod>
         <pod:Pod x:Name="timePresent" Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center"></pod:Pod>
         <pod:Pod x:Name="timeDeparted" Grid.Row="2" HorizontalAlignment="Center" VerticalAlignment="Center"></pod:Pod>
-
     </Grid>
 </Window>

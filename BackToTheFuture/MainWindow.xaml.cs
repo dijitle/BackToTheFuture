@@ -48,14 +48,14 @@ namespace BackToTheFuture
         {
 
 
-            for (int i = 1; i <= 12; i++)
+            for (char i = 'a'; i <= 'z'; i++)
             {
-                setValue(i);
-                Thread.Sleep(1000);
+                setValue(i.ToString());
+                Thread.Sleep(200);
             }
         }
 
-        private void setValue(int i)
+        private void setValue(string i)
         {
             if (!Dispatcher.CheckAccess())
             {
@@ -63,9 +63,10 @@ namespace BackToTheFuture
             }
             else
             {
-                timeDestination.Value = new DateTime(2015, i, 21, 4, 29, 00);
+                timeDestination.Value2 = i;
             }
         }
-        
+
+
     }
 }

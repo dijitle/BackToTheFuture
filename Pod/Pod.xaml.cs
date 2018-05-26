@@ -25,11 +25,16 @@ namespace Pod
 
             podMonth.TextLabel = "Month";
             podMonth.LEDSize = 3;
+            podMonth.Value = "feb";
             podDay.TextLabel = "Day";
+            podDay.Value = "22";
             podYear.TextLabel = "Year";
             podYear.LEDSize = 4;
+            podYear.Value = "1988";
             podHour.TextLabel = "Hour";
+            podHour.Value = "13";                
             podMinute.TextLabel = "Min";
+            podMinute.Value = "37";
 
         }
 
@@ -78,6 +83,15 @@ namespace Pod
                 podYear.Value = _value.ToString("yyyy");
                 podHour.Value = _value.ToString("HH");
                 podMinute.Value = _value.ToString("mm");
+            }
+        }
+
+        public string Value2
+        {            
+            set
+            {
+                string _value2 = value;
+                podMonth.Value = _value2;
             }
         }
 

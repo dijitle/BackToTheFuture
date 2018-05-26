@@ -60,14 +60,14 @@ namespace LED
             }
         }
 
-        public double LEDTop { get { return "abcdefgimopqrstz02356789".Contains(_ledValue) ? LED_ON : LED_DIM; } }
-        public double LEDTopLeft { get { return "acefghklmnopqrsuvy045689".Contains(_ledValue) ? LED_ON : LED_DIM; } }
+        public double LEDTop { get { return "abcdefgimopqrst02356789".Contains(_ledValue) ? LED_ON : LED_DIM; } }
+        public double LEDTopLeft { get { return "acefghklmnopqrsuvwy045689".Contains(_ledValue) ? LED_ON : LED_DIM; } }
         public double LEDTopRight { get { return "abdhjmnopqruvwy01234789".Contains(_ledValue) ? LED_ON : LED_DIM; } }
-        public double LEDWest { get { return "aefhprsy2345689".Contains(_ledValue) ? LED_ON : LED_DIM; } }
-        public double LEDEast{ get { return "abghprsy2345689".Contains(_ledValue) ? LED_ON : LED_DIM; } }
+        public double LEDWest { get { return "aefhprsyz2345689".Contains(_ledValue) ? LED_ON : LED_DIM; } }
+        public double LEDEast{ get { return "abghprsyz2345689".Contains(_ledValue) ? LED_ON : LED_DIM; } }
         public double LEDBottomLeft { get { return "acefghjklmnopqruvw0268".Contains(_ledValue) ? LED_ON : LED_DIM; } }
         public double LEDBottomRight { get { return "abdghjmnoqsuw013456789".Contains(_ledValue) ? LED_ON : LED_DIM; } }
-        public double LEDBottom { get { return "bcdegijloqsuw0235689".Contains(_ledValue) ? LED_ON : LED_DIM; } }
+        public double LEDBottom { get { return "bcdegijloqsuwz0235689".Contains(_ledValue) ? LED_ON : LED_DIM; } }
 
         public double LEDNorth { get { return "bdimt".Contains(_ledValue) ? LED_ON : "0123456789".Contains(_ledValue) ? LED_OFF : LED_DIM / 2 ; } }
         public double LEDNorthWest { get { return "n".Contains(_ledValue) ? LED_ON : "0123456789".Contains(_ledValue) ? LED_OFF : LED_DIM / 2 ; } }

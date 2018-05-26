@@ -23,7 +23,7 @@ namespace LEDGroup
             TextLabel = "hour";
 
             LEDSize = 2;
-            Value = "0000";
+            Value = "0";
             
         }
 
