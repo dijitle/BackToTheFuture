@@ -8,7 +8,7 @@
         xmlns:ledgroup="clr-namespace:LEDGroup;assembly=LEDGroup"
         xmlns:pod="clr-namespace:Pod;assembly=Pod"
         mc:Ignorable="d"
-        Title="Back To The Future" Height="600" Width="920">
+        Title="Back To The Future" Height="600" Width="920" Closing="Window_Closing">
 
     <Grid>
         <Grid.Background>

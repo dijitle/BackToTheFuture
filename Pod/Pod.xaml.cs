@@ -5,17 +5,22 @@ using System.Runtime.CompilerServices;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media;
+using System.Threading;
 
 namespace Pod
 {
     /// <summary>
     /// Interaction logic for Pod.xaml
     /// </summary>
-    public partial class Pod : UserControl, INotifyPropertyChanged
+    public partial class Pod : UserControl, INotifyPropertyChanged, IDisposable
     {
         private SolidColorBrush _ledColor;
         private string _textLabel = string.Empty;
         private DateTime _value;
+        private double _ledBright = LED.LED.LED_ON;
+
+        private Thread timeKeep;
+        private bool runThread = false;
 
         public Pod()
         {
@@ -35,6 +40,8 @@ namespace Pod
             podHour.Value = "13";                
             podMinute.TextLabel = "Min";
             podMinute.Value = "37";
+
+            timeKeep = new Thread(() => KeepTimeThread());
 
         }
 
@@ -67,6 +74,19 @@ namespace Pod
                 podHour.LEDColor = _ledColor;
                 podMinute.LEDColor = _ledColor;
 
+                OnPropertyChanged();
+            }
+        }
+
+        public double LEDBright
+        {
+            get
+            {
+                return _ledBright;
+            }
+            set
+            {
+                _ledBright = value;
                 OnPropertyChanged();
             }
         }
@@ -104,6 +124,27 @@ namespace Pod
             {
                 PropertyChanged.Invoke(this, new PropertyChangedEventArgs(propertyName));
             }
+        }
+
+        public void KeepTime()
+        {
+            runThread = true;
+            timeKeep.Start();
+        }
+
+        private void KeepTimeThread()
+        {
+            while (runThread)
+            {
+                Value = DateTime.Now;
+                LEDBright = Value.Second % 2 == 0 ? LED.LED.LED_ON : LED.LED.LED_DIM;
+                Thread.Sleep(1000);
+            }
+        }
+
+        public void Dispose()
+        {
+            runThread = false;
         }
     }
 }

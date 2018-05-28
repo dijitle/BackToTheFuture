@@ -15,9 +15,9 @@ namespace LED
         private SolidColorBrush _ledColor = Brushes.Red;
         private char _ledValue = '0';
 
-        private const double LED_ON = 1.0;
-        private const double LED_DIM = 0.2;
-        private const double LED_OFF = 0.0;
+        public const double LED_ON = 1.0;
+        public const double LED_DIM = 0.2;
+        public const double LED_OFF = 0.0;
 
         public LED()
         {

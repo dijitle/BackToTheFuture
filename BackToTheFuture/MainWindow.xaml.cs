@@ -31,6 +31,7 @@ namespace BackToTheFuture
             timePresent.Value = DateTime.Now;
             timePresent.LEDColor = Brushes.Green;
             timePresent.TextLabel = "Present Time";
+            timePresent.KeepTime();
 
             timeDeparted.Value = new DateTime(1955, 11, 12, 6, 38, 00); ;
             timeDeparted.LEDColor = Brushes.Yellow;
@@ -67,6 +68,11 @@ namespace BackToTheFuture
             }
         }
 
-
+        private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            timeDestination.Dispose();
+            timePresent.Dispose();
+            timeDeparted.Dispose();
+        }
     }
 }
