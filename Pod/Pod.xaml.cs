@@ -16,11 +16,12 @@ namespace Pod
     {
         private SolidColorBrush _ledColor;
         private string _textLabel = string.Empty;
-        private DateTime _value;
+        private DateTime? _value;
         private double _ledBright = LED.LED.LED_ON;
 
-        private Thread timeKeep;
-        private bool runThread = false;
+        private Thread _timeKeepThread = null;
+        private bool _runThread = false;
+        private bool _keepTime = false;
 
         public Pod()
         {
@@ -40,8 +41,6 @@ namespace Pod
             podHour.Value = "13";                
             podMinute.TextLabel = "Min";
             podMinute.Value = "37";
-
-            timeKeep = new Thread(() => KeepTimeThread());
 
         }
 
@@ -91,7 +90,7 @@ namespace Pod
             }
         }
 
-        public DateTime Value
+        public DateTime? Value
         {
             get
             {
@@ -100,21 +99,47 @@ namespace Pod
             set
             {
                 _value = value;
-                podMonth.Value = _value.ToString("MMM");
-                podDay.Value = _value.ToString("dd");
-                podYear.Value = _value.ToString("yyyy");
-                podHour.Value = _value.ToString("HH");
-                podMinute.Value = _value.ToString("mm");
+
+                if (value == null)
+                {
+                    podMonth.Value = string.Empty;
+                    podDay.Value = string.Empty;
+                    podYear.Value = string.Empty;
+                    podHour.Value = string.Empty;
+                    podMinute.Value = string.Empty;
+                    _runThread = false;
+                }
+                else
+                {                    
+                    podMonth.Value = _value.Value.ToString("MMM");
+                    podDay.Value = _value.Value.ToString("dd");
+                    podYear.Value = _value.Value.ToString("yyyy");
+                    podHour.Value = _value.Value.ToString("HH");
+                    podMinute.Value = _value.Value.ToString("mm");
+                }
             }
         }
 
-        public string Value2
-        {            
-            set
+        public void TurnOn(bool currentTime = false)
+        {
+            while (_timeKeepThread != null && _timeKeepThread.IsAlive)
             {
-                string _value2 = value;
-                podMonth.Value = _value2;
+                _runThread = false;
+                Thread.Sleep(1000);
             }
+            _runThread = true;
+            _keepTime = currentTime;
+            _timeKeepThread = new Thread(() => KeepTimeThread());
+            _timeKeepThread.Start();
+        }
+
+        public void TurnOff()
+        {
+            if (_timeKeepThread != null && _timeKeepThread.IsAlive)
+            {
+                _runThread = false;
+            }
+            Value = null;
         }
 
         public event PropertyChangedEventHandler PropertyChanged;
@@ -126,25 +151,25 @@ namespace Pod
             }
         }
 
-        public void KeepTime()
-        {
-            runThread = true;
-            timeKeep.Start();
-        }
-
         private void KeepTimeThread()
         {
-            while (runThread)
+            while (_runThread)
             {
-                Value = DateTime.Now;
-                LEDBright = Value.Second % 2 == 0 ? LED.LED.LED_ON : LED.LED.LED_DIM;
+                if (_keepTime)
+                {
+                    Value = Value.Value.AddSeconds(1);
+                }
+                LEDBright = DateTime.Now.Second % 2 == 0 ? LED.LED.LED_ON : LED.LED.LED_DIM;
                 Thread.Sleep(1000);
             }
         }
 
         public void Dispose()
         {
-            runThread = false;
+            if (_timeKeepThread != null && _timeKeepThread.IsAlive)
+            {
+                _runThread = false;
+            }
         }
     }
 }

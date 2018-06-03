@@ -24,48 +24,18 @@ namespace BackToTheFuture
         public MainWindow()
         {
             InitializeComponent();
-            timeDestination.Value = new DateTime(2015, 10, 21, 4, 29, 00);
+
+            timeDestination.Value = null;
             timeDestination.LEDColor = Brushes.Red;
             timeDestination.TextLabel = "Destination Time";
 
-            timePresent.Value = DateTime.Now;
+            timePresent.Value = null;
             timePresent.LEDColor = Brushes.Green;
             timePresent.TextLabel = "Present Time";
-            timePresent.KeepTime();
 
-            timeDeparted.Value = new DateTime(1955, 11, 12, 6, 38, 00); ;
+            timeDeparted.Value = null; 
             timeDeparted.LEDColor = Brushes.Yellow;
             timeDeparted.TextLabel = "Last Time Departed";
-        }
-
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-            Thread t = new Thread(new ThreadStart(cycle));
-            t.Start();
-
-        }
-
-        private void cycle()
-        {
-
-
-            for (char i = 'a'; i <= 'z'; i++)
-            {
-                setValue(i.ToString());
-                Thread.Sleep(200);
-            }
-        }
-
-        private void setValue(string i)
-        {
-            if (!Dispatcher.CheckAccess())
-            {
-                Dispatcher.Invoke(new Action(() => setValue(i)));
-            }
-            else
-            {
-                timeDestination.Value2 = i;
-            }
         }
 
         private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
@@ -73,6 +43,27 @@ namespace BackToTheFuture
             timeDestination.Dispose();
             timePresent.Dispose();
             timeDeparted.Dispose();
+        }
+
+        private void Button_ClickON(object sender, RoutedEventArgs e)
+        {
+            timeDestination.Value = new DateTime(2015, 10, 21, 4, 29, 00);
+            timeDestination.TurnOn();
+
+            timePresent.Value = DateTime.Now;
+            timePresent.TurnOn(true);
+
+            timeDeparted.Value = new DateTime(1955, 11, 12, 6, 38, 00); 
+            timeDeparted.TurnOn();
+
+        }
+
+        private void Button_ClickOFF(object sender, RoutedEventArgs e)
+        {
+            timeDestination.TurnOff();
+            timePresent.TurnOff();
+            timeDeparted.TurnOff();
+
         }
     }
 }

@@ -83,15 +83,32 @@ namespace LEDGroup
             set
             {
                 _value = value.ToLower();
-                led1.LEDValue = _value.PadLeft(_size, '0')[0];
-                led2.LEDValue = _value.PadLeft(_size, '0')[1];
-                if (_size >= 3)
+
+                if (_value != string.Empty)
                 {
-                    led3.LEDValue = _value.PadLeft(_size, '0')[2];
+                    led1.LEDValue = _value.PadLeft(_size, '0')[0];
+                    led2.LEDValue = _value.PadLeft(_size, '0')[1];
+                    if (_size >= 3)
+                    {
+                        led3.LEDValue = _value.PadLeft(_size, '0')[2];
+                    }
+                    if (_size == 4)
+                    {
+                        led4.LEDValue = _value.PadLeft(_size, '0')[3];
+                    }
                 }
-                if (_size == 4)
+                else
                 {
-                    led4.LEDValue = _value.PadLeft(_size, '0')[3];
+                    led1.LEDValue = " "[0];
+                    led2.LEDValue = " "[0];
+                    if (_size >= 3)
+                    {
+                        led3.LEDValue = " "[0];
+                    }
+                    if (_size == 4)
+                    {
+                        led4.LEDValue = " "[0];
+                    }
                 }
             }
         }

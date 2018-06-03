@@ -8,7 +8,7 @@
         xmlns:ledgroup="clr-namespace:LEDGroup;assembly=LEDGroup"
         xmlns:pod="clr-namespace:Pod;assembly=Pod"
         mc:Ignorable="d"
-        Title="Back To The Future" Height="600" Width="920" Closing="Window_Closing">
+        Title="Back To The Future" Height="813" Width="920" Closing="Window_Closing">
 
     <Grid>
         <Grid.Background>
@@ -21,10 +21,13 @@
             <RowDefinition Height="1*"/>
             <RowDefinition Height="1*"/>
             <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
         </Grid.RowDefinitions>
+        <Button Grid.Row="0" Margin="0,0,698,127" Click="Button_ClickON">ON</Button>
+        <Button Grid.Row="0" Margin="219,0,479,127" Click="Button_ClickOFF">OFF</Button>
 
-        <pod:Pod x:Name="timeDestination" Grid.Row="0" HorizontalAlignment="Center" VerticalAlignment="Center"></pod:Pod>
-        <pod:Pod x:Name="timePresent" Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center"></pod:Pod>
-        <pod:Pod x:Name="timeDeparted" Grid.Row="2" HorizontalAlignment="Center" VerticalAlignment="Center"></pod:Pod>
+        <pod:Pod x:Name="timeDestination" Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center"></pod:Pod>
+        <pod:Pod x:Name="timePresent" Grid.Row="2" HorizontalAlignment="Center" VerticalAlignment="Center"></pod:Pod>
+        <pod:Pod x:Name="timeDeparted" Grid.Row="3" HorizontalAlignment="Center" VerticalAlignment="Center"></pod:Pod>
     </Grid>
 </Window>
