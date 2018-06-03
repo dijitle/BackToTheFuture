@@ -5,6 +5,7 @@ using System.Runtime.CompilerServices;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media;
+
 namespace LEDGroup
 {
     /// <summary>
@@ -110,6 +111,21 @@ namespace LEDGroup
                         led4.LEDValue = " "[0];
                     }
                 }
+            }
+        }
+
+        public LED.LED.LEDType Type
+        {
+            get
+            {
+                return led1.Type;
+            }
+            set
+            {
+                led1.Type = value;
+                led2.Type = value;
+                led3.Type = value;
+                led4.Type = value;
             }
         }
 

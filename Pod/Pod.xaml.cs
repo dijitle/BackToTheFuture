@@ -32,6 +32,7 @@ namespace Pod
             podMonth.TextLabel = "Month";
             podMonth.LEDSize = 3;
             podMonth.Value = "feb";
+            podMonth.Type = LED.LED.LEDType.Letter;
             podDay.TextLabel = "Day";
             podDay.Value = "22";
             podYear.TextLabel = "Year";

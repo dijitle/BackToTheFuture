@@ -14,10 +14,15 @@ namespace LED
     {
         private SolidColorBrush _ledColor = Brushes.Red;
         private char _ledValue = '0';
-
         public const double LED_ON = 1.0;
         public const double LED_DIM = 0.2;
         public const double LED_OFF = 0.0;
+
+        public enum LEDType
+        {
+            Digit,
+            Letter
+        }
 
         public LED()
         {
@@ -35,7 +40,9 @@ namespace LED
                 _ledColor = value;
                 OnPropertyChanged();
             }
-        } 
+        }
+
+        public LEDType Type { get; set; } = LEDType.Digit;
 
         public char LEDValue
         {
@@ -69,13 +76,13 @@ namespace LED
         public double LEDBottomRight { get { return "abdghjmnoqsuw013456789".Contains(_ledValue) ? LED_ON : LED_DIM; } }
         public double LEDBottom { get { return "bcdegijloqsuwz0235689".Contains(_ledValue) ? LED_ON : LED_DIM; } }
 
-        public double LEDNorth { get { return "bdimt".Contains(_ledValue) ? LED_ON : "0123456789".Contains(_ledValue) ? LED_OFF : LED_DIM / 2 ; } }
-        public double LEDNorthWest { get { return "n".Contains(_ledValue) ? LED_ON : "0123456789".Contains(_ledValue) ? LED_OFF : LED_DIM / 2 ; } }
-        public double LEDNorthEast { get { return "k".Contains(_ledValue) ? LED_ON : "0123456789".Contains(_ledValue) ? LED_OFF : LED_DIM / 2; } }
+        public double LEDNorth { get { return "bdimt".Contains(_ledValue) ? LED_ON : Type == LEDType.Digit ? LED_OFF : LED_DIM / 2 ; } }
+        public double LEDNorthWest { get { return "n".Contains(_ledValue) ? LED_ON : Type == LEDType.Digit ? LED_OFF : LED_DIM / 2 ; } }
+        public double LEDNorthEast { get { return "k".Contains(_ledValue) ? LED_ON : Type == LEDType.Digit ? LED_OFF : LED_DIM / 2; } }
 
-        public double LEDSouth { get { return "bditwy".Contains(_ledValue) ? LED_ON : "0123456789".Contains(_ledValue) ? LED_OFF : LED_DIM / 2 ; } }
-        public double LEDSouthWest { get { return "kqrx".Contains(_ledValue) ? LED_ON : "0123456789".Contains(_ledValue) ? LED_OFF : LED_DIM / 2; } }
-        public double LEDSouthEast { get { return "vxz".Contains(_ledValue) ? LED_ON : "0123456789".Contains(_ledValue) ? LED_OFF : LED_DIM / 2; } }
+        public double LEDSouth { get { return "bditwy".Contains(_ledValue) ? LED_ON : Type == LEDType.Digit ? LED_OFF : LED_DIM / 2 ; } }
+        public double LEDSouthWest { get { return "kqrx".Contains(_ledValue) ? LED_ON : Type == LEDType.Digit ? LED_OFF : LED_DIM / 2; } }
+        public double LEDSouthEast { get { return "vxz".Contains(_ledValue) ? LED_ON : Type == LEDType.Digit ? LED_OFF : LED_DIM / 2; } }
 
         public event PropertyChangedEventHandler PropertyChanged;
         protected void OnPropertyChanged([CallerMemberName] string propertyName = null)
