@@ -74,7 +74,7 @@ namespace LED
         public double LEDEast{ get { return "abghprsyz2345689".Contains(_ledValue) ? LED_ON : LED_DIM; } }
         public double LEDBottomLeft { get { return "acefghjklmnopqruvw0268".Contains(_ledValue) ? LED_ON : LED_DIM; } }
         public double LEDBottomRight { get { return "abdghjmnoqsuw013456789".Contains(_ledValue) ? LED_ON : LED_DIM; } }
-        public double LEDBottom { get { return "bcdegijloqsuwz0235689".Contains(_ledValue) ? LED_ON : LED_DIM; } }
+        public double LEDBottom { get { return "_bcdegijloqsuwz0235689".Contains(_ledValue) ? LED_ON : LED_DIM; } }
 
         public double LEDNorth { get { return "bdimt".Contains(_ledValue) ? LED_ON : Type == LEDType.Digit ? LED_OFF : LED_DIM / 2 ; } }
         public double LEDNorthWest { get { return "n".Contains(_ledValue) ? LED_ON : Type == LEDType.Digit ? LED_OFF : LED_DIM / 2 ; } }

@@ -21,6 +21,8 @@ namespace BackToTheFuture
     /// </summary>
     public partial class MainWindow : Window
     {
+        private string _input = string.Empty;
+
         public MainWindow()
         {
             InitializeComponent();
@@ -64,6 +66,77 @@ namespace BackToTheFuture
             timePresent.TurnOff();
             timeDeparted.TurnOff();
 
+        }
+
+        private void Button_ClickSET(object sender, RoutedEventArgs e)
+        {
+            if (_input == string.Empty)
+            {
+                timeDestination.TurnOff();
+            }
+            else
+            {
+                DateTime d = new DateTime(Convert.ToInt32(_input.Substring(4, 4)), Convert.ToInt32(_input.Substring(0, 2)), Convert.ToInt32(_input.Substring(2, 2)));
+                timeDestination.Value = d;
+                _input = string.Empty;
+            }
+        }
+
+        private void Window_KeyDown(object sender, KeyEventArgs e)
+        {
+            switch (e.Key)
+            {
+                case Key.NumPad0:
+                case Key.D0:
+                    _input += "0";
+                    break;
+
+                case Key.NumPad1:
+                case Key.D1:
+                    _input += "1";
+                    break;
+
+                case Key.NumPad2:
+                case Key.D2:
+                    _input += "2";
+                    break;
+
+                case Key.NumPad3:
+                case Key.D3:
+                    _input += "3";
+                    break;
+
+                case Key.NumPad4:
+                case Key.D4:
+                    _input += "4";
+                    break;
+
+                case Key.NumPad5:
+                case Key.D5:
+                    _input += "5";
+                    break;
+
+                case Key.NumPad6:
+                case Key.D6:
+                    _input += "6";
+                    break;
+
+                case Key.NumPad7:
+                case Key.D7:
+                    _input += "7";
+                    break;
+
+                case Key.NumPad8:
+                case Key.D8:
+                    _input += "8";
+                    break;
+
+                case Key.NumPad9:
+                case Key.D9:
+                    _input += "9";
+                    break;
+
+            }
         }
     }
 }
