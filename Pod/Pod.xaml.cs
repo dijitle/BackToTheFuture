@@ -17,7 +17,7 @@ namespace Pod
         private SolidColorBrush _ledColor;
         private string _textLabel = string.Empty;
         private DateTime? _value;
-        private double _ledBright = LED.LED.LED_ON;
+        private double _ledBright = LED.LED.LED_DIM;
 
         private Thread _timeKeepThread = null;
         private bool _runThread = false;
