@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LEDGroup", "LEDGroup\LEDGro
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pod", "Pod\Pod.csproj", "{9B786043-472D-4E7E-B13C-4C832A8FF4C4}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TimeInput", "TimeInput\TimeInput.csproj", "{B8E1A4AB-2B9A-42D6-8E5D-9D4307CD2EB8}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{9B786043-472D-4E7E-B13C-4C832A8FF4C4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9B786043-472D-4E7E-B13C-4C832A8FF4C4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9B786043-472D-4E7E-B13C-4C832A8FF4C4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B8E1A4AB-2B9A-42D6-8E5D-9D4307CD2EB8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B8E1A4AB-2B9A-42D6-8E5D-9D4307CD2EB8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B8E1A4AB-2B9A-42D6-8E5D-9D4307CD2EB8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B8E1A4AB-2B9A-42D6-8E5D-9D4307CD2EB8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
