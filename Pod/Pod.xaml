@@ -48,9 +48,9 @@
                     <RowDefinition Height="1*" />
                 </Grid.RowDefinitions>
 
-                <Ellipse Grid.Row="0" Fill="{Binding LEDColor}" Opacity="{Binding LEDBright}" Width="10" Height="10" VerticalAlignment="Bottom" Stroke="Black" />
+                <Ellipse Grid.Row="0" Fill="{Binding LEDColor}" Opacity="{Binding LEDBright}" Width="15" Height="15" VerticalAlignment="Bottom" Stroke="Black" />
 
-                <Ellipse Grid.Row="1" Fill="{Binding LEDColor}" Opacity="{Binding LEDBright}" Width="10" Height="10" VerticalAlignment="Center" Stroke="Black" />
+                <Ellipse Grid.Row="1" Fill="{Binding LEDColor}" Opacity="{Binding LEDBright}" Width="15" Height="15" VerticalAlignment="Center" Stroke="Black" />
             </Grid>
 
             <ledgroup:LEDGroup Name="podMinute" Grid.Column="8" HorizontalAlignment="Center" VerticalAlignment="Center"></ledgroup:LEDGroup>

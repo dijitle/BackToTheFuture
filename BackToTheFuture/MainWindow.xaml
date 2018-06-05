@@ -7,8 +7,9 @@
         xmlns:local="clr-namespace:BackToTheFuture"
         xmlns:ledgroup="clr-namespace:LEDGroup;assembly=LEDGroup"
         xmlns:pod="clr-namespace:Pod;assembly=Pod"
+        xmlns:time="clr-namespace:TimeInput;assembly=TimeInput"
         mc:Ignorable="d"
-        Title="Back To The Future" Height="813" Width="920" Closing="Window_Closing" KeyDown="Window_KeyDown">
+        Title="Back To The Future" Height="1200" Width="920" Closing="Window_Closing" KeyDown="Window_KeyDown">
 
     <Grid>
         <Grid.Background>
@@ -22,6 +23,7 @@
             <RowDefinition Height="1*"/>
             <RowDefinition Height="1*"/>
             <RowDefinition Height="1*"/>
+            <RowDefinition Height="2*"/>
         </Grid.RowDefinitions>
         <Button Grid.Row="0" Margin="0,0,698,127" Click="Button_ClickON">ON</Button>
         <Button Grid.Row="0" Margin="219,0,479,127" Click="Button_ClickOFF">OFF</Button>
@@ -30,5 +32,8 @@
         <pod:Pod x:Name="timeDestination" Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center"></pod:Pod>
         <pod:Pod x:Name="timePresent" Grid.Row="2" HorizontalAlignment="Center" VerticalAlignment="Center"></pod:Pod>
         <pod:Pod x:Name="timeDeparted" Grid.Row="3" HorizontalAlignment="Center" VerticalAlignment="Center"></pod:Pod>
+
+        <time:TimeInput Grid.Row="4" Width="300" Height="300"></time:TimeInput>
+
     </Grid>
 </Window>
