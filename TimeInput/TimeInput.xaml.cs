@@ -85,6 +85,16 @@ namespace TimeInput
                 case Key.D9:
                     typeof(Button).GetMethod("set_IsPressed", BindingFlags.Instance | BindingFlags.NonPublic).Invoke(key9, new object[] { true });
                     break;
+                case Key.Delete:
+                case Key.Back:
+                    typeof(Button).GetMethod("set_IsPressed", BindingFlags.Instance | BindingFlags.NonPublic).Invoke(keyDelete, new object[] { true });
+                    break;
+                case Key.Enter:
+                    typeof(Button).GetMethod("set_IsPressed", BindingFlags.Instance | BindingFlags.NonPublic).Invoke(keyEnter, new object[] { true });
+                    break;
+                case Key.Escape:
+                    typeof(Button).GetMethod("set_IsPressed", BindingFlags.Instance | BindingFlags.NonPublic).Invoke(keyReset, new object[] { true });
+                    break;
 
             }
         }
@@ -151,6 +161,19 @@ namespace TimeInput
                 case Key.D9:
                     typeof(Button).GetMethod("set_IsPressed", BindingFlags.Instance | BindingFlags.NonPublic).Invoke(key9, new object[] { false });
                     key9.RaiseEvent(new RoutedEventArgs(Button.ClickEvent));
+                    break;
+                case Key.Delete:
+                case Key.Back:
+                    typeof(Button).GetMethod("set_IsPressed", BindingFlags.Instance | BindingFlags.NonPublic).Invoke(keyDelete, new object[] { false });
+                    keyDelete.RaiseEvent(new RoutedEventArgs(Button.ClickEvent));
+                    break;
+                case Key.Enter:
+                    typeof(Button).GetMethod("set_IsPressed", BindingFlags.Instance | BindingFlags.NonPublic).Invoke(keyEnter, new object[] { false });
+                    keyEnter.RaiseEvent(new RoutedEventArgs(Button.ClickEvent));
+                    break;
+                case Key.Escape:
+                    typeof(Button).GetMethod("set_IsPressed", BindingFlags.Instance | BindingFlags.NonPublic).Invoke(keyReset, new object[] { false });
+                    keyReset.RaiseEvent(new RoutedEventArgs(Button.ClickEvent));
                     break;
 
             }
