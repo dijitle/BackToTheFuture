@@ -27,9 +27,23 @@ namespace TimeInput
             InitializeComponent();
         }
 
+        public ITimeInput Main { get; set; }
+
         private void Button_Click(object sender, RoutedEventArgs e)
         {
+            if (sender == keyEnter)
+            {
+                Main.SetTime("022219881337");
+            }
+            else if (sender == keyReset)
+            {
+                Main.SetTime(string.Empty);
+            }
+            else
+            {
 
+            }
+            
         }
 
         public void PressKeyDown(object sender, KeyEventArgs e)

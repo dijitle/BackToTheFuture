@@ -13,13 +13,14 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.Threading;
+using BackToTheFuture;
 
 namespace BackToTheFuture
 {
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class MainWindow : Window, PowerSwitch.IPowerSwitch, TimeInput.ITimeInput
     {
         private string _input = string.Empty;
 
@@ -27,9 +28,10 @@ namespace BackToTheFuture
         {
             InitializeComponent();
 
-            timeDestination.Value = null;
-            timePresent.Value = null;
-            timeDeparted.Value = null;
+            TurnOff();
+
+            powerSwitch.Main = this;
+            timeInput.Main = this;
         }
 
         private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
@@ -39,30 +41,23 @@ namespace BackToTheFuture
             timeDeparted.Dispose();
         }
 
-        private void Button_ClickON(object sender, RoutedEventArgs e)
+        public void TurnOn()
         {
-            timeDestination.Value = new DateTime(2015, 10, 21, 4, 29, 00);
-            timeDestination.TurnOn();
-
-            timePresent.Value = DateTime.Now;
-            timePresent.TurnOn(true);
-
-            timeDeparted.Value = new DateTime(1955, 11, 12, 6, 38, 00);
-            timeDeparted.TurnOn();
-
+            timeDestination.TurnOn(new DateTime(2015, 10, 21, 4, 29, 00));
+            timePresent.TurnOn(DateTime.Now, true);
+            timeDeparted.TurnOn(new DateTime(1955, 11, 12, 6, 38, 00));
         }
 
-        private void Button_ClickOFF(object sender, RoutedEventArgs e)
+        public void TurnOff()
         {
             timeDestination.TurnOff();
             timePresent.TurnOff();
             timeDeparted.TurnOff();
-
         }
 
-        private void Button_ClickSET(object sender, RoutedEventArgs e)
+        public void SetTime(string input)
         {
-            if (_input == string.Empty)
+            if (input == string.Empty)
             {
                 timeDestination.TurnOff();
             }
@@ -71,7 +66,7 @@ namespace BackToTheFuture
                 int yr, mo, dy, hr, mn;
                 try
                 {
-                    yr = Convert.ToInt32(_input.Substring(4, 4));
+                    yr = Convert.ToInt32(input.Substring(4, 4));
                 }
                 catch
                 {
@@ -80,7 +75,7 @@ namespace BackToTheFuture
 
                 try
                 {
-                    mo = Convert.ToInt32(_input.Substring(0, 2));
+                    mo = Convert.ToInt32(input.Substring(0, 2));
                 }
                 catch
                 {
@@ -89,7 +84,7 @@ namespace BackToTheFuture
 
                 try
                 {
-                    dy = Convert.ToInt32(_input.Substring(2, 2));
+                    dy = Convert.ToInt32(input.Substring(2, 2));
                 }
                 catch
                 {
@@ -98,7 +93,7 @@ namespace BackToTheFuture
 
                 try
                 {
-                    hr = Convert.ToInt32(_input.Substring(8, 2));
+                    hr = Convert.ToInt32(input.Substring(8, 2));
                 }
                 catch
                 {
@@ -107,18 +102,15 @@ namespace BackToTheFuture
 
                 try
                 {
-                    mn = Convert.ToInt32(_input.Substring(10, 2));
+                    mn = Convert.ToInt32(input.Substring(10, 2));
                 }
                 catch
                 {
                     mn = DateTime.Now.Day;
                 }
 
-
-
                 DateTime d = new DateTime(yr, mo, dy, hr, mn, 0);
-                timeDestination.Value = d;
-                _input = string.Empty;
+                timeDestination.TurnOn(d);
             }
         }
 

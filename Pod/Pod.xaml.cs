@@ -17,6 +17,8 @@ namespace Pod
         private SolidColorBrush _ledColor;
         private string _textLabel = string.Empty;
         private DateTime? _value;
+        private long _startTime;
+        private long _initialTime;
         private double _ledBright = LED.LED.LED_DIM;
 
         private Thread _timeKeepThread = null;
@@ -25,9 +27,7 @@ namespace Pod
 
         public Pod()
         {
-            InitializeComponent();
-
-            TextLabel = "Destination time";    
+            InitializeComponent();                
         }
 
         public string TextLabel
@@ -106,7 +106,7 @@ namespace Pod
             }
         }
 
-        public void TurnOn(bool currentTime = false)
+        public void TurnOn(DateTime currentTime, bool keepTime = false)
         {
             while (_timeKeepThread != null && _timeKeepThread.IsAlive)
             {
@@ -114,7 +114,10 @@ namespace Pod
                 Thread.Sleep(1000);
             }
             _runThread = true;
-            _keepTime = currentTime;
+            _keepTime = keepTime;
+            _startTime = DateTime.Now.Ticks;
+            _initialTime = currentTime.Ticks;
+            Value = currentTime;
             _timeKeepThread = new Thread(() => KeepTimeThread());
             _timeKeepThread.Start();
         }
@@ -143,10 +146,10 @@ namespace Pod
             {
                 if (_keepTime)
                 {
-                    Value = Value.Value.AddSeconds(1);
+                    Value = new DateTime(_initialTime + (new TimeSpan(DateTime.Now.Ticks - _startTime).Ticks));
                 }
-                LEDBright = DateTime.Now.Second % 2 == 0 ? LED.LED.LED_ON : LED.LED.LED_DIM;
-                Thread.Sleep(1000);
+                LEDBright = LEDBright == LED.LED.LED_DIM ? LED.LED.LED_ON : LED.LED.LED_DIM;
+                Thread.Sleep(1000 - DateTime.Now.Millisecond);
             }
         }
 

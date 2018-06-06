@@ -106,6 +106,10 @@
       <Project>{9b786043-472d-4e7e-b13c-4c832a8ff4c4}</Project>
       <Name>Pod</Name>
     </ProjectReference>
+    <ProjectReference Include="..\PowerSwitch\PowerSwitch.csproj">
+      <Project>{5373c57e-bd64-4730-97a9-5d098e5d74f1}</Project>
+      <Name>PowerSwitch</Name>
+    </ProjectReference>
     <ProjectReference Include="..\TimeInput\TimeInput.csproj">
       <Project>{ee159997-7dc9-4007-bb65-13b0d5ec7420}</Project>
       <Name>TimeInput</Name>

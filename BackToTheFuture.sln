@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pod", "Pod\Pod.csproj", "{9
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TimeInput", "TimeInput\TimeInput.csproj", "{EE159997-7DC9-4007-BB65-13B0D5EC7420}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PowerSwitch", "PowerSwitch\PowerSwitch.csproj", "{5373C57E-BD64-4730-97A9-5D098E5D74F1}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{EE159997-7DC9-4007-BB65-13B0D5EC7420}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EE159997-7DC9-4007-BB65-13B0D5EC7420}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EE159997-7DC9-4007-BB65-13B0D5EC7420}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5373C57E-BD64-4730-97A9-5D098E5D74F1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5373C57E-BD64-4730-97A9-5D098E5D74F1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5373C57E-BD64-4730-97A9-5D098E5D74F1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5373C57E-BD64-4730-97A9-5D098E5D74F1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
