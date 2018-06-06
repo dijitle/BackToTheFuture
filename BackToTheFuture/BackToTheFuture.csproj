@@ -107,7 +107,7 @@
       <Name>Pod</Name>
     </ProjectReference>
     <ProjectReference Include="..\TimeInput\TimeInput.csproj">
-      <Project>{b8e1a4ab-2b9a-42d6-8e5d-9d4307cd2eb8}</Project>
+      <Project>{ee159997-7dc9-4007-bb65-13b0d5ec7420}</Project>
       <Name>TimeInput</Name>
     </ProjectReference>
   </ItemGroup>

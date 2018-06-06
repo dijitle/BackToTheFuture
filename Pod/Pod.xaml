@@ -34,13 +34,13 @@
             </Grid.ColumnDefinitions>
            
                                          
-            <ledgroup:LEDGroup Name="podMonth" Grid.Column="0" HorizontalAlignment="Center" VerticalAlignment="Center"></ledgroup:LEDGroup>
+            <ledgroup:LEDGroup Name="podMonth" Grid.Column="0" HorizontalAlignment="Center" VerticalAlignment="Center" TextLabel="month" LEDSize="3" Value="feb" Type="Letter"></ledgroup:LEDGroup>
 
-            <ledgroup:LEDGroup Name="podDay" Grid.Column="2" HorizontalAlignment="Center" VerticalAlignment="Center"></ledgroup:LEDGroup>
+            <ledgroup:LEDGroup Name="podDay" Grid.Column="2" HorizontalAlignment="Center" VerticalAlignment="Center" TextLabel="day" LEDSize="2" Value="22" Type="Digit"></ledgroup:LEDGroup>
 
-            <ledgroup:LEDGroup Name="podYear" Grid.Column="4" HorizontalAlignment="Center" VerticalAlignment="Center"></ledgroup:LEDGroup>
+            <ledgroup:LEDGroup Name="podYear" Grid.Column="4" HorizontalAlignment="Center" VerticalAlignment="Center" TextLabel="year" LEDSize="4" Value="1988" Type="Digit"></ledgroup:LEDGroup>
 
-            <ledgroup:LEDGroup Name="podHour" Grid.Column="6" HorizontalAlignment="Center" VerticalAlignment="Center"></ledgroup:LEDGroup>
+            <ledgroup:LEDGroup Name="podHour" Grid.Column="6" HorizontalAlignment="Center" VerticalAlignment="Center" TextLabel="hour" LEDSize="2" Value="13" Type="Digit"></ledgroup:LEDGroup>
 
             <Grid Grid.Column="7">
                 <Grid.RowDefinitions>
@@ -53,7 +53,7 @@
                 <Ellipse Grid.Row="1" Fill="{Binding LEDColor}" Opacity="{Binding LEDBright}" Width="15" Height="15" VerticalAlignment="Center" Stroke="Black" />
             </Grid>
 
-            <ledgroup:LEDGroup Name="podMinute" Grid.Column="8" HorizontalAlignment="Center" VerticalAlignment="Center"></ledgroup:LEDGroup>
+            <ledgroup:LEDGroup Name="podMinute" Grid.Column="8" HorizontalAlignment="Center" VerticalAlignment="Center" TextLabel="min" LEDSize="2" Value="37" Type="Digit"></ledgroup:LEDGroup>
             
             
         </Grid>

@@ -16,7 +16,7 @@ using System.Windows.Shapes;
 namespace TimeInput
 {
     /// <summary>
-    /// Interaction logic for UserControl1.xaml
+    /// Interaction logic for TimeInput.xaml
     /// </summary>
     public partial class TimeInput : UserControl
     {

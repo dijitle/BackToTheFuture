@@ -27,22 +27,7 @@ namespace Pod
         {
             InitializeComponent();
 
-            TextLabel = "Destination time";
-
-            podMonth.TextLabel = "Month";
-            podMonth.LEDSize = 3;
-            podMonth.Value = "feb";
-            podMonth.Type = LED.LED.LEDType.Letter;
-            podDay.TextLabel = "Day";
-            podDay.Value = "22";
-            podYear.TextLabel = "Year";
-            podYear.LEDSize = 4;
-            podYear.Value = "1988";
-            podHour.TextLabel = "Hour";
-            podHour.Value = "13";                
-            podMinute.TextLabel = "Min";
-            podMinute.Value = "37";
-
+            TextLabel = "Destination time";    
         }
 
         public string TextLabel
