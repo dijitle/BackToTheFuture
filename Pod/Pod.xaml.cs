@@ -148,7 +148,7 @@ namespace Pod
                 {
                     Value = new DateTime(_initialTime + (new TimeSpan(DateTime.Now.Ticks - _startTime).Ticks));
                 }
-                LEDBright = LEDBright == LED.LED.LED_DIM ? LED.LED.LED_ON : LED.LED.LED_DIM;
+                LEDBright = DateTime.Now.Second % 2 == 0 ? LED.LED.LED_ON : LED.LED.LED_DIM;
                 Thread.Sleep(1000 - DateTime.Now.Millisecond);
             }
         }

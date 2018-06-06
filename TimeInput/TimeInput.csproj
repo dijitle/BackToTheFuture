@@ -58,5 +58,11 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\LED\LED.csproj">
+      <Project>{676e9465-d29d-4e74-ad0b-38eda7502752}</Project>
+      <Name>LED</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

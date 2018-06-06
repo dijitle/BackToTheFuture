@@ -64,52 +64,62 @@ namespace BackToTheFuture
             else
             {
                 int yr, mo, dy, hr, mn;
-                try
+                if (_input.Length >= 8)
                 {
                     yr = Convert.ToInt32(input.Substring(4, 4));
                 }
-                catch
+                else
                 {
                     yr = DateTime.Now.Year;
                 }
 
-                try
+                if (_input.Length >= 2)
                 {
                     mo = Convert.ToInt32(input.Substring(0, 2));
                 }
-                catch
+                else
                 {
                     mo = DateTime.Now.Month;
                 }
 
-                try
+                if (_input.Length >= 4)
                 {
                     dy = Convert.ToInt32(input.Substring(2, 2));
                 }
-                catch
+                else
                 {
                     dy = DateTime.Now.Day;
                 }
 
-                try
+                if (_input.Length >= 10)
                 {
                     hr = Convert.ToInt32(input.Substring(8, 2));
                 }
-                catch
+                else
                 {
                     hr = DateTime.Now.Day;
                 }
 
-                try
+                if (_input.Length >= 12)
                 {
                     mn = Convert.ToInt32(input.Substring(10, 2));
                 }
-                catch
+                else
                 {
                     mn = DateTime.Now.Day;
                 }
 
-                DateTime d = new DateTime(yr, mo, dy, hr, mn, 0);
+                DateTime d;
+
+                try
+                {
+                    d = new DateTime(yr, mo, dy, hr, mn, 0);
+                }
+                catch
+                {
+                    d = DateTime.Now;
+                }
+
                 timeDestination.TurnOn(d);
             }
         }

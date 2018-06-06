@@ -10,7 +10,7 @@
         xmlns:time="clr-namespace:TimeInput;assembly=TimeInput"
         xmlns:power="clr-namespace:PowerSwitch;assembly=PowerSwitch"
         mc:Ignorable="d"
-        Title="Back To The Future" Height="1074" Width="920" Closing="Window_Closing" KeyDown="Window_KeyDown" KeyUp="Window_KeyUp">
+        Title="Back To The Future" Height="1074" Width="920" Closing="Window_Closing" PreviewKeyDown="Window_KeyDown" PreviewKeyUp="Window_KeyUp">
 
     <Grid>
         <Grid.Background>

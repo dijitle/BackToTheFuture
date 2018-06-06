@@ -1,7 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
+using System.Diagnostics;
 using System.Linq;
 using System.Reflection;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
@@ -20,7 +23,7 @@ namespace TimeInput
     /// <summary>
     /// Interaction logic for TimeInput.xaml
     /// </summary>
-    public partial class TimeInput : UserControl
+    public partial class TimeInput : UserControl, INotifyPropertyChanged
     {
         public TimeInput()
         {
@@ -28,22 +31,46 @@ namespace TimeInput
         }
 
         public ITimeInput Main { get; set; }
+        private string _input = string.Empty;
+        private double _ledBright = LED.LED.LED_DIM;
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             if (sender == keyEnter)
             {
-                Main.SetTime("022219881337");
+                Main.SetTime(_input);
+                Debug.WriteLine("enter pressed");
             }
             else if (sender == keyReset)
             {
                 Main.SetTime(string.Empty);
+                _input = string.Empty;
+                Debug.WriteLine("reset pressed");
+            }
+            else if (sender == keyDelete && _input.Length > 0)
+            {
+                _input = _input.Substring(0, _input.Length - 1);
+                Debug.WriteLine("delete pressed");
             }
             else
             {
-
+                _input += ((Button)sender).Content.ToString();
+                Debug.WriteLine("input = " + _input);
             }
             
+        }
+
+        public double LEDBright
+        {
+            get
+            {
+                return _ledBright;
+            }
+            set
+            {
+                _ledBright = value;
+                OnPropertyChanged();
+            }
         }
 
         public void PressKeyDown(object sender, KeyEventArgs e)
@@ -104,6 +131,8 @@ namespace TimeInput
                     typeof(Button).GetMethod("set_IsPressed", BindingFlags.Instance | BindingFlags.NonPublic).Invoke(keyDelete, new object[] { true });
                     break;
                 case Key.Enter:
+                case Key.Add:
+                    LEDBright = LED.LED.LED_ON;
                     typeof(Button).GetMethod("set_IsPressed", BindingFlags.Instance | BindingFlags.NonPublic).Invoke(keyEnter, new object[] { true });
                     break;
                 case Key.Escape:
@@ -182,6 +211,8 @@ namespace TimeInput
                     keyDelete.RaiseEvent(new RoutedEventArgs(Button.ClickEvent));
                     break;
                 case Key.Enter:
+                case Key.Add:
+                    LEDBright = LED.LED.LED_DIM;
                     typeof(Button).GetMethod("set_IsPressed", BindingFlags.Instance | BindingFlags.NonPublic).Invoke(keyEnter, new object[] { false });
                     keyEnter.RaiseEvent(new RoutedEventArgs(Button.ClickEvent));
                     break;
@@ -191,6 +222,25 @@ namespace TimeInput
                     break;
 
             }
+        }
+
+        public event PropertyChangedEventHandler PropertyChanged;
+        protected void OnPropertyChanged([CallerMemberName] string propertyName = null)
+        {
+            if (PropertyChanged != null)
+            {
+                PropertyChanged.Invoke(this, new PropertyChangedEventArgs(propertyName));
+            }
+        }
+
+        private void keyEnter_PreviewMouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            LEDBright = LED.LED.LED_ON;
+        }
+
+        private void keyEnter_PreviewMouseLeftButtonUp(object sender, MouseButtonEventArgs e)
+        {
+            LEDBright = LED.LED.LED_DIM;
         }
     }
 }
