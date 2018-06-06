@@ -28,16 +28,8 @@ namespace BackToTheFuture
             InitializeComponent();
 
             timeDestination.Value = null;
-            timeDestination.LEDColor = Brushes.Red;
-            timeDestination.TextLabel = "Destination Time";
-
             timePresent.Value = null;
-            timePresent.LEDColor = Brushes.Green;
-            timePresent.TextLabel = "Present Time";
-
-            timeDeparted.Value = null; 
-            timeDeparted.LEDColor = Brushes.Yellow;
-            timeDeparted.TextLabel = "Last Time Departed";
+            timeDeparted.Value = null;
         }
 
         private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
@@ -55,7 +47,7 @@ namespace BackToTheFuture
             timePresent.Value = DateTime.Now;
             timePresent.TurnOn(true);
 
-            timeDeparted.Value = new DateTime(1955, 11, 12, 6, 38, 00); 
+            timeDeparted.Value = new DateTime(1955, 11, 12, 6, 38, 00);
             timeDeparted.TurnOn();
 
         }
@@ -124,7 +116,7 @@ namespace BackToTheFuture
 
 
 
-                DateTime d = new DateTime(yr,mo,dy,hr,mn,0);
+                DateTime d = new DateTime(yr, mo, dy, hr, mn, 0);
                 timeDestination.Value = d;
                 _input = string.Empty;
             }
@@ -132,59 +124,12 @@ namespace BackToTheFuture
 
         private void Window_KeyDown(object sender, KeyEventArgs e)
         {
-            switch (e.Key)
-            {
-                case Key.NumPad0:
-                case Key.D0:
-                    _input += "0";
-                    break;
+            timeInput.PressKeyDown(sender, e);
+        }
 
-                case Key.NumPad1:
-                case Key.D1:
-                    _input += "1";
-                    break;
-
-                case Key.NumPad2:
-                case Key.D2:
-                    _input += "2";
-                    break;
-
-                case Key.NumPad3:
-                case Key.D3:
-                    _input += "3";
-                    break;
-
-                case Key.NumPad4:
-                case Key.D4:
-                    _input += "4";
-                    break;
-
-                case Key.NumPad5:
-                case Key.D5:
-                    _input += "5";
-                    break;
-
-                case Key.NumPad6:
-                case Key.D6:
-                    _input += "6";
-                    break;
-
-                case Key.NumPad7:
-                case Key.D7:
-                    _input += "7";
-                    break;
-
-                case Key.NumPad8:
-                case Key.D8:
-                    _input += "8";
-                    break;
-
-                case Key.NumPad9:
-                case Key.D9:
-                    _input += "9";
-                    break;
-
-            }
+        private void Window_KeyUp(object sender, KeyEventArgs e)
+        {
+            timeInput.PressKeyUp(sender, e);
         }
     }
 }
