@@ -94,6 +94,10 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\FluxCapacitor\FluxCapacitor.csproj">
+      <Project>{1a80574a-7473-4e82-a25a-0d64a3102067}</Project>
+      <Name>FluxCapacitor</Name>
+    </ProjectReference>
     <ProjectReference Include="..\LEDGroup\LEDGroup.csproj">
       <Project>{aefdb7e1-8346-4f68-9d61-211b71b7efc5}</Project>
       <Name>LEDGroup</Name>
