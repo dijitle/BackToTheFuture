@@ -22,8 +22,6 @@ namespace BackToTheFuture
     /// </summary>
     public partial class MainWindow : Window, PowerSwitch.IPowerSwitch, TimeInput.ITimeInput
     {
-        private string _input = string.Empty;
-
         public MainWindow()
         {
             InitializeComponent();
@@ -64,7 +62,7 @@ namespace BackToTheFuture
             else
             {
                 int yr, mo, dy, hr, mn;
-                if (_input.Length >= 8)
+                if (input.Length >= 8)
                 {
                     yr = Convert.ToInt32(input.Substring(4, 4));
                 }
@@ -73,7 +71,7 @@ namespace BackToTheFuture
                     yr = DateTime.Now.Year;
                 }
 
-                if (_input.Length >= 2)
+                if (input.Length >= 2)
                 {
                     mo = Convert.ToInt32(input.Substring(0, 2));
                 }
@@ -82,7 +80,7 @@ namespace BackToTheFuture
                     mo = DateTime.Now.Month;
                 }
 
-                if (_input.Length >= 4)
+                if (input.Length >= 4)
                 {
                     dy = Convert.ToInt32(input.Substring(2, 2));
                 }
@@ -91,7 +89,7 @@ namespace BackToTheFuture
                     dy = DateTime.Now.Day;
                 }
 
-                if (_input.Length >= 10)
+                if (input.Length >= 10)
                 {
                     hr = Convert.ToInt32(input.Substring(8, 2));
                 }
@@ -100,7 +98,7 @@ namespace BackToTheFuture
                     hr = DateTime.Now.Day;
                 }
 
-                if (_input.Length >= 12)
+                if (input.Length >= 12)
                 {
                     mn = Convert.ToInt32(input.Substring(10, 2));
                 }
