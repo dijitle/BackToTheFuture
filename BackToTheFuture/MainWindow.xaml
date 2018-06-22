@@ -9,6 +9,7 @@
         xmlns:pod="clr-namespace:Pod;assembly=Pod"
         xmlns:time="clr-namespace:TimeInput;assembly=TimeInput"
         xmlns:power="clr-namespace:PowerSwitch;assembly=PowerSwitch"
+        xmlns:flux="clr-namespace:FluxCapacitor;assembly=FluxCapacitor"
         mc:Ignorable="d"
         Title="Back To The Future" Height="1074" Width="920" Closing="Window_Closing" PreviewKeyDown="Window_KeyDown" PreviewKeyUp="Window_KeyUp">
 
@@ -35,5 +36,6 @@
 
         <time:TimeInput Name="timeInput" Grid.Row="4" Width="300" Height="300" HorizontalAlignment="Left" VerticalAlignment="Top"/>
         <power:PowerSwitch Name="powerSwitch" Grid.Row="4" Margin="354,40,402,109"></power:PowerSwitch>
+        <flux:FluxCapacitor Grid.Row="4" Margin="665,0,0,0"/>
     </Grid>
 </Window>
